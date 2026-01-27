@@ -1,90 +1,106 @@
 import "./Menu.css";
+import profilePhoto from "../assets/profile-photo.jpeg";
 
 const MenuPage = () => {
   return (
     <div className="menu-page">
 
       {/* Top Right Album Button */}
-      <div className="album-icon">
-        <img
-          src="https://via.placeholder.com/60"
-          alt="Album"
-          title="Go to Album"
-        />
+      <div className="album-heeading">
+        <div className="album-icon">
+          <img
+            src={profilePhoto}
+            alt="Album"
+            title="Go to Album"
+          />
+        </div>
+
+        {/* Wedding Title */}
+        <h1 className="wedding-title">
+          Bride Weds Groom
+        </h1>
       </div>
 
-      {/* Wedding Title */}
-      <h1 className="wedding-title">
-        Neha & Nitya Wedding
-      </h1>
 
       {/* Menu Section */}
       <div className="menu-container">
 
-        {/* Starters */}
+        {/* Stall */}
         <div className="menu-block">
           <div className="menu-text">
-            <h2>Starters</h2>
+            <h2>Stall</h2>
             <ul>
-              <li>Paneer Tikka</li>
-              <li>Veg Spring Roll</li>
-              <li>Hara Bhara Kebab</li>
-              <li>Cheese Balls</li>
-              <li>Veg Manchurian</li>
+              <li>Tea/Coffee</li>
+              <li>Fish Ball/Paneer Cheese Ball</li>
+              <li>Phuchka/Papri Chat</li>
+              <li>Chicken Lollipop</li>
+              <li>Jilabi Rabri</li>
+              <li>Reshmi Kabab</li>
+              <li>Red Kabab</li>
+              <li>Momo</li>
+              <li>Salad</li>
+              <li>Mixed Fruit Juice Perlour</li>
+              <li>Soda Counter</li>
+              <li>Ice Cream</li>4
+              <li>Baby Corn</li>
             </ul>
           </div>
 
           <div className="menu-image">
             <img
-              src="https://via.placeholder.com/350x220?text=Starter"
-              alt="Starter"
+              src="https://via.placeholder.com/350x220?text=Stall"
+              alt="Stall"
             />
           </div>
         </div>
 
-        {/* Main Course */}
+        {/* Fruit Stall */}
         <div className="menu-block reverse">
           <div className="menu-image">
             <img
-              src="https://via.placeholder.com/350x220?text=Main+Course"
-              alt="Main Course"
+              src="https://via.placeholder.com/350x220?text=Fruit+Stall"
+              alt="Fruit Stall"
             />
           </div>
 
           <div className="menu-text">
             <h2>Main Course</h2>
             <ul>
-              <li>Butter Paneer</li>
-              <li>Dal Makhani</li>
-              <li>Veg Biryani</li>
-              <li>Shahi Paneer</li>
-              <li>Mix Veg Curry</li>
-              <li>Jeera Rice</li>
-              <li>Tandoori Roti</li>
-              <li>Butter Naan</li>
-              <li>Veg Korma</li>
-              <li>Malai Kofta</li>
+              <li>Pomfret Tondoor/Paneer Pasinda</li>
+              <li>Green Chatni</li>
+              <li>Salad</li>
+              <li>Tandoor Naan</li>
+              <li>Afgaan Chana Masala</li>
+              <li>Vetki Paturi</li>
+              <li>Sada Vaat</li>
+              <li>Mutton Afgan Biriyani</li>
+              <li>Mutton Kosha</li>
+              <li>Chatni</li>
+              <li>Papor</li>
+              <li>KC Das Raj Vog</li>
+              <li>Sondesh</li>
+              <li>Hot Gulap Jamun</li>
             </ul>
           </div>
         </div>
 
-        {/* Desserts */}
+        {/* Main Course */}
         <div className="menu-block">
           <div className="menu-text">
-            <h2>Desserts</h2>
+            <h2>Fruit Stall</h2>
             <ul>
-              <li>Gulab Jamun</li>
-              <li>Rasgulla</li>
-              <li>Ice Cream</li>
-              <li>Brownie</li>
-              <li>Rabri</li>
+              <li>Apple</li>
+              <li>CKB</li>
+              <li>Grapes</li>
+              <li>Papaya</li>
+              <li>Sweet Lemon</li>
             </ul>
           </div>
 
           <div className="menu-image">
             <img
-              src="https://via.placeholder.com/350x220?text=Dessert"
-              alt="Dessert"
+              src="https://via.placeholder.com/350x220?text=Main+Course"
+              alt="Main Course"
             />
           </div>
         </div>

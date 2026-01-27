@@ -1,79 +1,101 @@
+import { useState } from "react";
 import "./Menu2.css";
 import profilePhoto from "../assets/profile-photo.jpeg";
-import wave from "../assets/wave-like-style.jpeg";
 
-const Menu2 = () => {
+const MenuCategory = () => {
+  const [activeCategory, setActiveCategory] = useState("stall");
+
   return (
-    <div className="menu-page">
+    <div className="menu-category-page">
 
       {/* Album Icon */}
       <div className="album-icon">
-        <img
-          src={profilePhoto}
-          alt="Album"
-          title="Go to Album"
-        />
+        <img src={profilePhoto} alt="Album" />
       </div>
 
-      {/* Wedding Title */}
-      <h1 className="wedding-title">Neha & Nitya Wedding</h1>
+      {/* Spacer after profile */}
+      <div className="top-spacing"></div>
 
-      <div className="menu-layout">
+      {/* Wedding Heading */}
+      <h1 className="wedding-title">Bride & Groom Weds</h1>
+      <h4 className="message">With love, laughter & happily ever after</h4>
 
-        {/* Left Menu Content */}
-        <div className="menu-content">
-
-          <section className="menu-section">
-            <h2>Starters</h2>
-            <ul>
-              <li>Paneer Tikka</li>
-              <li>Veg Spring Roll</li>
-              <li>Hara Bhara Kebab</li>
-              <li>Cheese Balls</li>
-              <li>Veg Manchurian</li>
-            </ul>
-          </section>
-
-          <section className="menu-section">
-            <h2>Main Course</h2>
-            <ul>
-              <li>Butter Paneer</li>
-              <li>Dal Makhani</li>
-              <li>Veg Biryani</li>
-              <li>Shahi Paneer</li>
-              <li>Mix Veg Curry</li>
-              <li>Jeera Rice</li>
-              <li>Tandoori Roti</li>
-              <li>Butter Naan</li>
-              <li>Veg Korma</li>
-              <li>Malai Kofta</li>
-            </ul>
-          </section>
-
-          <section className="menu-section">
-            <h2>Desserts</h2>
-            <ul>
-              <li>Gulab Jamun</li>
-              <li>Rasgulla</li>
-              <li>Ice Cream</li>
-              <li>Brownie</li>
-              <li>Rabri</li>
-            </ul>
-          </section>
-
+      {/* Category Circles */}
+      <div className="category-wrapper">
+        <div
+          className={`category-circle ${activeCategory === "stall" ? "active" : ""}`}
+          onClick={() => setActiveCategory("stall")}
+        >
+          Stall
         </div>
 
-        {/* Right Wave Image */}
-        <div className="wave-image">
-          <img
-            src={wave}
-            alt="Wedding Food"
-          />
+        <div
+          className={`category-circle ${activeCategory === "fruit" ? "active" : ""}`}
+          onClick={() => setActiveCategory("fruit")}
+        >
+          Fruit Stall
         </div>
 
+        <div
+          className={`category-circle ${activeCategory === "main" ? "active" : ""}`}
+          onClick={() => setActiveCategory("main")}
+        >
+          Main Course
+        </div>
       </div>
+
+      {/* Menu List */}
+      <div className="menu-list">
+        {activeCategory === "stall" && (
+          <ul className="menu-ul">
+            <li>Tea/Coffee</li>
+            <li>Fish Ball/Paneer Cheese Ball</li>
+            <li>Phuchka/Papri Chat</li>
+            <li>Chicken Lollipop</li>
+            <li>Jilabi Rabri</li>
+            <li>Reshmi Kabab</li>
+            <li>Red Kabab</li>
+            <li>Momo</li>
+            <li>Salad</li>
+            <li>Mixed Fruit Juice Perlour</li>
+            <li>Soda Counter</li>
+            <li>Ice Cream</li>4
+            <li>Baby Corn</li>
+          </ul>
+        )}
+
+        {activeCategory === "main" && (
+          <ul className="menu-ul">
+            <li>Pomfret Tondoor/Paneer Pasinda</li>
+            <li>Green Chatni</li>
+            <li>Salad</li>
+            <li>Tandoor Naan</li>
+            <li>Afgaan Chana Masala</li>
+            <li>Vetki Paturi</li>
+            <li>Sada Vaat</li>
+            <li>Mutton Afgan Biriyani</li>
+            <li>Mutton Kosha</li>
+            <li>Chatni</li>
+            <li>Papor</li>
+            <li>KC Das Raj Vog</li>
+            <li>Sondesh</li>
+            <li>Hot Gulap Jamun</li>
+          </ul>
+        )}
+
+        {activeCategory === "fruit" && (
+          <ul className="menu-ul">
+            <li>Apple</li>
+            <li>CKB</li>
+            <li>Grapes</li>
+            <li>Papaya</li>
+            <li>Sweet Lemon</li>
+          </ul>
+        )}
+      </div>
+
     </div>
   );
 };
 
-export default Menu2;
+export default MenuCategory;
