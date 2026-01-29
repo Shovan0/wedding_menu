@@ -1,113 +1,102 @@
+import { useState, useRef } from "react";
 import "./Menu.css";
-// import profilePhoto from "../assets/profile-photo.jpeg";
+import closeup from "../assets/closeup.jpeg";
+import standing from "../assets/standing.jpeg";
+import howrah from "../assets/howrah.jpeg";
+// import "./Check.css";
 
-const MenuPage = () => {
+const Menu = () => {
+  const [activeCategory, setActiveCategory] = useState("stall");
+
+  const [lang, setLang] = useState("en");
+  const touchStartX = useRef(0);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    const diff = e.changedTouches[0].clientX - touchStartX.current;
+    if (diff > 60) setLang("bn");   // swipe right → Bengali
+    if (diff < -60) setLang("en");  // swipe left → English
+  };
+
+
+  const weddingText = {
+    en: {
+      message: "With love, laughter & happily ever after",
+      counter: ["Stall", "Main Course", "Fruit Stall"],
+      stall: ["Tea/Coffee", "Fish Ball/Paneer Cheese Ball", "Phuchka/Papri Chat", "Chicken Lollipop", "Jilabi Rabri", "Reshmi Kabab", "Red Kabab", "Momo", "Salad", "Mixed Fruit Juice Perlour", "Soda Counter", "Ice Cream", "Baby Corn"],
+      main: ["Pomfret Tandoor/Paneer Pasinda", "Green Chatni", "Salad", "Tandoor Naan", "Afgaan Chana Masala", "Vetki Paturi", "Sada Vaat", "Mutton Afgan Biriyani", "Mutton Kosha", "Chatni", "Papor", "KC Das Raj Vog", "Sondesh", "Hot Gulap Jamun"],
+      fruit: ["Apple", "CKB", "Grapes", "Papaya", "Sweet Lemon"]
+    },
+    bn: {
+      message: "আমার মতে তোর মতন কেউ নেই.",
+      counter: ["স্টল", "মেইন কোর্স", "ফ্রুট স্টল"],
+      stall: ["চা/কফি", "ফিশ বল/পনির চিজ বল", "ফুচকা/পাপড়ি চাট", "চিকেন ললিপপ", "জিলাবি রাবড়ি", "রেশমি কাবাব", "রেড কাবাব", "মোমো", "সালাদ", "মিক্সড ফ্রুট জুস পার্লার", "সোডা কাউন্টার", "আইসক্রিম", "বেবি কর্ন"],
+      main: ["পমফ্রেট তন্দুর/পনির পাসিন্দা", "সবুজ চাটনি", "সালাদ", "তন্দুর নান", "আফগান ছানা মসলা", "বেতকি পাতুরি", "সাদা ভাত", "মাটন আফগান বিরিয়ানি", "মাটন কোশা", "চাটনি", "পাপড়", "কে সি দাস রাজ ভোগ", "সন্দেশ", "হট গুলাপ জামুন"],
+      fruit: ["আপেল", "সিকেবি", "আঙ্গুর", "পেঁপে", "মিষ্টি লেবু"]
+    }
+  }
+
   return (
-    <div className="menu-page">
+    <div
+      className="menu-category-page"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
 
-      {/* Top Right Album Button */}
-      <div className="album-heeading">
-        <div className="album-icon">
-          <img
-            src={profilePhoto}
-            alt="Album"
-            title="Go to Album"
-          />
-        </div>
+      <div>
+        <img className="profile-photo" src={howrah} alt="Profile" />
+      </div>
 
-        {/* Wedding Title */}
-        <h1 className="wedding-title">
-          Bride Weds Groom
-        </h1>
+      <div className="wedding-title">
+        <h1 className="first">Riya</h1>
+        <h1 className="second">weds</h1>
+        <h1 className="third">Sumanta</h1>
+      </div>
+
+      <h4 className="message">{weddingText[lang].message}</h4>
+
+      <div className="lang-toggle">
+        <button
+          className={lang === "en" ? "active" : ""}
+          onClick={() => setLang("en")}
+        >
+          EN
+        </button>
+        <button
+          className={lang === "bn" ? "active" : ""}
+          onClick={() => setLang("bn")}
+        >
+          বাংলা
+        </button>
+      </div>
+
+      <div className="category-wrapper">
+        {["stall", "main", "fruit"].map((cat, index) => (
+          <div
+            key={cat}
+            className={`category-circle ${activeCategory === cat ? "active" : ""}`}
+            onClick={() => setActiveCategory(cat)}
+          >
+            {weddingText[lang].counter[index]}
+          </div>
+        ))}
       </div>
 
 
-      {/* Menu Section */}
-      <div className="menu-container">
-
-        {/* Stall */}
-        <div className="menu-block">
-          <div className="menu-text">
-            <h2>Stall</h2>
-            <ul>
-              <li>Tea/Coffee</li>
-              <li>Fish Ball/Paneer Cheese Ball</li>
-              <li>Phuchka/Papri Chat</li>
-              <li>Chicken Lollipop</li>
-              <li>Jilabi Rabri</li>
-              <li>Reshmi Kabab</li>
-              <li>Red Kabab</li>
-              <li>Momo</li>
-              <li>Salad</li>
-              <li>Mixed Fruit Juice Perlour</li>
-              <li>Soda Counter</li>
-              <li>Ice Cream</li>4
-              <li>Baby Corn</li>
-            </ul>
-          </div>
-
-          <div className="menu-image">
-            <img
-              src="https://via.placeholder.com/350x220?text=Stall"
-              alt="Stall"
-            />
-          </div>
-        </div>
-
-        {/* Fruit Stall */}
-        <div className="menu-block reverse">
-          <div className="menu-image">
-            <img
-              src="https://via.placeholder.com/350x220?text=Fruit+Stall"
-              alt="Fruit Stall"
-            />
-          </div>
-
-          <div className="menu-text">
-            <h2>Main Course</h2>
-            <ul>
-              <li>Pomfret Tondoor/Paneer Pasinda</li>
-              <li>Green Chatni</li>
-              <li>Salad</li>
-              <li>Tandoor Naan</li>
-              <li>Afgaan Chana Masala</li>
-              <li>Vetki Paturi</li>
-              <li>Sada Vaat</li>
-              <li>Mutton Afgan Biriyani</li>
-              <li>Mutton Kosha</li>
-              <li>Chatni</li>
-              <li>Papor</li>
-              <li>KC Das Raj Vog</li>
-              <li>Sondesh</li>
-              <li>Hot Gulap Jamun</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Main Course */}
-        <div className="menu-block">
-          <div className="menu-text">
-            <h2>Fruit Stall</h2>
-            <ul>
-              <li>Apple</li>
-              <li>CKB</li>
-              <li>Grapes</li>
-              <li>Papaya</li>
-              <li>Sweet Lemon</li>
-            </ul>
-          </div>
-
-          <div className="menu-image">
-            <img
-              src="https://via.placeholder.com/350x220?text=Main+Course"
-              alt="Main Course"
-            />
-          </div>
-        </div>
-
+      <div className="menu-list">
+        <ul className="menu-ul">
+          {weddingText[lang][activeCategory].map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
       </div>
+
+
     </div>
   );
 };
 
-export default MenuPage;
+export default Menu;
