@@ -1,26 +1,28 @@
 import { useState } from "react";
-import "./Menu2.css";
-// import profilePhoto from "../assets/profile-photo.jpeg";
+import "./Menu3.css";
+import closeup from "../assets/closeup.jpeg";
+import standing from "../assets/standing.jpeg";
+import howrah from "../assets/howrah.jpeg";
+// import "./Check.css"
 
-const Menu2 = () => {
+const Menu3 = () => {
   const [activeCategory, setActiveCategory] = useState("stall");
 
   return (
     <div className="menu-category-page">
 
-      {/* Album Icon */}
-      <div className="album-icon">
-        <img src={profilePhoto} alt="Album" />
+      <div>
+        <img className="profile-photo" src={howrah} alt="Profile" />
       </div>
 
-      {/* Spacer after profile */}
-      <div className="top-spacing"></div>
+      <div className="wedding-title">
+        <h1 className="first">Riya</h1>
+        <h1 className="seecond">weds</h1>
+        <h1 className="third">Sumanta</h1>
+      </div>
 
-      {/* Wedding Heading */}
-      <h1 className="wedding-title">Bride & Groom Weds</h1>
       <h4 className="message">With love, laughter & happily ever after</h4>
 
-      {/* Category Circles */}
       <div className="category-wrapper">
         <div
           className={`category-circle ${activeCategory === "stall" ? "active" : ""}`}
@@ -44,7 +46,6 @@ const Menu2 = () => {
         </div>
       </div>
 
-      {/* Menu List */}
       <div className="menu-list">
         {activeCategory === "stall" && (
           <ul className="menu-ul">
@@ -98,4 +99,4 @@ const Menu2 = () => {
   );
 };
 
-export default Menu2;
+export default Menu3;

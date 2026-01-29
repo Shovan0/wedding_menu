@@ -1,5 +1,5 @@
 import "./Menu.css";
-import profilePhoto from "../assets/profile-photo.jpeg";
+// import profilePhoto from "../assets/profile-photo.jpeg";
 
 const MenuPage = () => {
   return (
