@@ -32,17 +32,19 @@ const Menu = () => {
 
   const weddingText = {
     en: {
+      name: ["Riya", "weds", "Sumanta"],
       message: "With love, laughter & happily ever after",
       counter: ["Stall", "Main Course", "Fruit Stall"],
-      stall: ["Tea/Coffee", "Fish Ball/Paneer Cheese Ball", "Phuchka/Papri Chat", "Chicken Lollipop", "Jilabi Rabri", "Reshmi Kabab", "Red Kabab", "Momo", "Salad", "Mixed Fruit Juice Perlour", "Soda Counter", "Ice Cream", "Baby Corn"],
-      main: ["Pomfret Tandoor/Paneer Pasinda", "Green Chatni", "Salad", "Tandoor Naan", "Afgaan Chana Masala", "Vetki Paturi", "Sada Vaat", "Mutton Afgan Biriyani", "Mutton Kosha", "Chatni", "Papor", "KC Das Raj Vog", "Sondesh", "Hot Gulap Jamun"],
+      stall: ["Tea/Coffee", "Fish Ball/Paneer Cheese Ball", "Phuchka/Papri Chat", "Chicken Lollipop", "Jilabi Rabri", "Reshmi Kabab", "Red Kabab", "Momo", "Salad", "Mixed Fruit Juice Perlour", "Soda Counter", "Ice Cream", "Baby Corn", "Makha Sondesh", "Hot Gulap Jamun", "Paan"],
+      main: ["Pomfret Tandoor/Paneer Pasinda", "Green Chatni", "Salad", "Tandoor Naan", "Afghan Chana Masala/Keema Dal Fry", "Vetki Paturi", "Plain Rice", "Mutton Afghani Biriyani  (Kolkata Style)", "Mutton Kosha", "Chatni", "Papad", "KC Das Raj Vog"],
       fruit: ["Apple", "CKB", "Grapes", "Papaya", "Sweet Lemon"]
     },
     bn: {
-      message: "আমার মতে তোর মতন কেউ নেই.",
+      name: ["রিয়া ও সুমন্ত", "এর", "শুভ পরিণয়"],
+      message: "ভালোবাসার এক নতুন অধ্যায়, আজ থেকে পথ চলা একসাথে।",
       counter: ["স্টল", "মেইন কোর্স", "ফ্রুট স্টল"],
-      stall: ["চা/কফি", "ফিশ বল/পনির চিজ বল", "ফুচকা/পাপড়ি চাট", "চিকেন ললিপপ", "জিলাবি রাবড়ি", "রেশমি কাবাব", "রেড কাবাব", "মোমো", "সালাদ", "মিক্সড ফ্রুট জুস পার্লার", "সোডা কাউন্টার", "আইসক্রিম", "বেবি কর্ন"],
-      main: ["পমফ্রেট তন্দুর/পনির পাসিন্দা", "সবুজ চাটনি", "সালাদ", "তন্দুর নান", "আফগান ছানা মসলা", "বেতকি পাতুরি", "সাদা ভাত", "মাটন আফগান বিরিয়ানি", "মাটন কোশা", "চাটনি", "পাপড়", "কে সি দাস রাজ ভোগ", "সন্দেশ", "হট গুলাপ জামুন"],
+      stall: ["চা/কফি", "ফিশ বল/পনির চীজ বল", "ফুচকা/পাপড়ি চাট", "চিকেন ললিপপ", "জিলিপি রাবড়ি", "রেশমি কাবাব", "রেড কাবাব", "মোমো", "স্যালাড", "মিক্সড ফ্রুট জুস পার্লার", "সোডা কাউন্টার-পার্লার", "আইসক্রিম-পার্লার", "বেবি কর্ন", "মাখা সন্দেশ", "গরম গোলাপ জামন", "পান"],
+      main: ["পমফ্রেট তন্দুর/পনির পাসিন্দা", "গ্রিন চাটনি", "স্যালাড", "তন্দুরি নান", "আফগান চানা মসলা", "ভেটকি পাতুরি", "সাদা ভাত", "মটন আফগান বিরিয়ানি", "মটন কষা", "চাটনি", "পাঁপড়", "কে-সি-দাসের রাজ ভোগ"],
       fruit: ["আপেল", "সিকেবি", "আঙ্গুর", "পেঁপে", "মিষ্টি লেবু"]
     }
   };
@@ -53,9 +55,9 @@ const Menu = () => {
       <img className="profile-photo" src={howrah} alt="Profile" />
 
       <div className="wedding-title">
-        <h1 className="first">Riya</h1>
-        <h1 className="second">weds</h1>
-        <h1 className="third">Sumanta</h1>
+        <h1 className="first">{weddingText[lang].name[0]}</h1>
+        <h1 className="second">{weddingText[lang].name[1]}</h1>
+        <h1 className="third">{weddingText[lang].name[2]}</h1>
       </div>
 
       <h4 className="message">{weddingText[lang].message}</h4>
@@ -76,7 +78,7 @@ const Menu = () => {
         onTouchStart={handleCategoryTouchStart}
         onTouchEnd={handleCategoryTouchEnd}
       >
-        <div className="menu-tabs">
+        <div className="menu-tabs sticky-tabs">
           {categories.map((cat, index) => (
             <button
               key={cat}

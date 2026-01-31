@@ -99,10 +99,8 @@ body {
   text-align: center;
   display: relative;
   transform: translateY(-15px);
-  /* font-size: 27px; */
   color: #7a1f2b;
   font-family: "Great Vibes", cursive;
-  /* font-weight: 520; */
 }
 
 /* ================= LANGUAGE TOGGLE ================= */
@@ -142,16 +140,22 @@ body {
   display: flex;
   justify-content: center;
   gap: 28px;
-  position: sticky;
-  position: relative;
   transform: translateY(-12px);
+}
+
+/* STICKY WRAPPER */
+.sticky-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #faf7f2;
+  padding: 14px 0;
 }
 
 /* TAB BASE */
 .menu-tab {
   width: 75px;
   height: 75px;
-
   background: transparent;
   border: 1.6px solid #7a1f2b;
 
@@ -160,8 +164,6 @@ body {
   justify-content: center;
 
   font-family: "Cormorant Upright", serif;
-  /* font-size: 18px; */
-  /* font-weight: 520; */
   color: #7a1f2b;
 
   cursor: pointer;
@@ -203,6 +205,7 @@ body {
 .menu-tab:not(.active):hover {
   background: rgba(122, 31, 43, 0.08);
 }
+
 
 /* ================= MENU LIST ================= */
 .menu-list {
@@ -254,29 +257,19 @@ body {
   height: 48px;
 
   border-radius: 50%;
-  border: 1.6px solid #7a1f2b;
 
-  background: #faf7f2;
-  color: #7a1f2b;
+  color: #faf7f2;
+  background-color: #7a1f2b;
+  border: none;
 
-  /* font-size: 20px; */
-  font-weight: 600;
-  cursor: pointer;
+  font-size: 20px;
+  font-weight: 800;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  transition: all 0.25s ease;
-  z-index: 50;
 }
-
-/* Hover effect */
-/* .back-to-top:hover {
-  background: #7a1f2b;
-  color: #efe5d8;
-} */
 
 
 /* ======================================================
@@ -307,17 +300,19 @@ body {
 .menu-category-page.lang-en .menu-tab {
   font-family: var(--tab-font);
   font-size: 18px;
+  font-weight: 520;
 }
 
 .menu-category-page.lang-en .menu-ul li {
   font-family: var(--item-font);
   font-size: 22px;
+  font-weight: 500;
 }
 
 /* ---------------- BENGALI ---------------- */
 .menu-category-page.lang-bn {
   --name-font: "Noto Serif Bengali", serif;
-  --message-font: "Hind Siliguri", sans-serif;
+  --message-font: "Noto Serif Bengali", serif;
   --tab-font: "Hind Siliguri", sans-serif;
   --item-font: "Noto Serif Bengali", serif;
 
@@ -326,13 +321,25 @@ body {
 
 .menu-category-page.lang-bn .wedding-title h1 {
   font-family: var(--name-font);
-  font-size: 42px; /* slightly bigger */
+  font-size: 35px; 
   letter-spacing: 0.5px;
+  font-weight: 500;
+  position: relative;
+  transform: translate(10px, 10px);
+}
+
+.menu-category-page.lang-bn .wedding-title h1.second {
+  transform: translate(3px, 2px);
+}
+
+.menu-category-page.lang-bn .wedding-title h1.third {
+  transform: translate(10px, -3px);
 }
 
 .menu-category-page.lang-bn .message {
   font-family: var(--message-font);
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .menu-category-page.lang-bn .menu-tab {
@@ -349,5 +356,5 @@ body {
 .menu-category-page *,
 .menu-category-page *::before,
 .menu-category-page *::after {
-  transition: font-size 0.25s ease, font-family 0.25s ease;
+  transition: font-size 0.5s ease, font-family 0.25s ease;
 }
