@@ -1,16 +1,17 @@
-/* GLOBAL FIX */
+/* ================= GLOBAL RESET ================= */
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
   overflow-x: hidden;
 }
 
-/* PAGE */
+/* ================= PAGE ================= */
 .menu-category-page {
   min-height: 100vh;
   background: #faf7f2;
@@ -20,12 +21,15 @@ html, body {
   overflow-x: hidden;
 }
 
-/* FADE IMAGE */
+/* ================= HERO IMAGE ================= */
 .profile-photo {
   width: 100%;
   height: 45vh;
   object-fit: cover;
   display: block;
+
+  opacity: 0;
+  animation: photoFadeIn 3s ease forwards;
 
   -webkit-mask-image: linear-gradient(
     to bottom,
@@ -37,80 +41,76 @@ html, body {
     rgba(0, 0, 0, 0) 100%
   );
 
-  mask-image: linear
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 55%,
+    rgba(0, 0, 0, 0.7) 70%,
+    rgba(0, 0, 0, 0.4) 82%,
+    rgba(0, 0, 0, 0.15) 92%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
-/* wedding title */
+@keyframes photoFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ================= WEDDING TITLE ================= */
 .wedding-title {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: -40px;
   text-align: center;
+  font-family: "Great Vibes", cursive;
 }
 
 .wedding-title h1 {
   margin: 0;
-  font-size: 40px;
+  /* font-size: 40px; */
   letter-spacing: 1.2px;
   color: #7a1f2b;
 }
 
-/* staggered alignment */
-.wedding-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: -40px;
-  text-align: center;
-}
-
-.wedding-title h1 {
-  margin: 0;
-  font-size: 40px;
-  letter-spacing: 1.2px;
-  color: #7a1f2b;
-}
-
-/* staggered alignment */
 .first {
-  transform: translateX(-60px);
+  transform: translate(-60px, 20px);
 }
 
 .second {
-  font-size: 28px;
-  font-weight: 400;
+  /* font-size: 28px; */
+  /* font-weight: 400; */
   margin-top: 6px;
-  transform: translateX(18px);
+  transform: translateX(0px);
 }
 
 .third {
   margin-top: 6px;
-  transform: translateX(36px);
+  transform: translateX(50px);
 }
 
-.third {
-  margin-top: 6px;
-  transform: translateX(36px);
-}
-
+/* ================= MESSAGE ================= */
 .message {
   text-align: center;
-  font-size: 22px;
+  display: relative;
+  transform: translateY(-15px);
   color: #7a1f2b;
-  /* margin-top: -10px; */
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
+  font-family: "Great Vibes", cursive;
 }
 
-/* englist to bengali button */
+/* ================= LANGUAGE TOGGLE ================= */
 .lang-toggle {
   position: absolute;
   top: 15px;
   right: 15px;
   display: flex;
   gap: 6px;
-  z-index: 10;
+  z-index: 30;
 }
 
 .lang-toggle button {
@@ -119,7 +119,7 @@ html, body {
   color: #7a1f2b;
   font-family: "Playfair Display", serif;
   padding: 4px 10px;
-  font-size: 13px;
+  /* font-size: 13px; */
   cursor: pointer;
   border-radius: 14px;
 }
@@ -129,79 +129,232 @@ html, body {
   color: #fff;
 }
 
-/* Category Circles */
-.category-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 45px;
+/* ================= SWIPE AREA ================= */
+.menu-swipe-area {
+  touch-action: pan-y;
 }
 
-/* Base circle style */
-.category-circle {
+
+/* ================= MENU TABS ================= */
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  transform: translateY(-12px);
+}
+
+/* STICKY WRAPPER */
+.sticky-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #faf7f2;
+  padding: 14px 0;
+}
+
+/* TAB BASE */
+.menu-tab {
   width: 75px;
   height: 75px;
-  border-radius: 50%;
-  background: #efe5d8;          /* beige */
-  color: #7a1f2b;               /* maroon */
-  border: 1.5px solid #7a1f2b;
+  background: transparent;
+  border: 1.6px solid #7a1f2b;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  font-family: "Cormorant Upright", serif;
+  color: #7a1f2b;
+
   cursor: pointer;
-  font-weight: 600;
-  font-size: 15px;
+  position: relative;
+  letter-spacing: 0.6px;
+
+  border-radius: 50%;
+  padding: 0;
   text-align: center;
-  transition: all 0.25s ease;
+
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
-.category-circle:hover {
-  background: #e6d6c3;
+/* ACTIVE TAB */
+.menu-tab.active {
+  background: #7a1f2b;
+  color: #efe5d8;
+  border-color: #7a1f2b;
 }
 
-/* Active circle */
-.category-circle.active {
-  background: #7a1f2b;          /* maroon */
-  color: #ffffff;
+/* UNDERLINE */
+.menu-tab::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background: #7a1f2b;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
 }
 
-/* Menu List */
-/* Menu List Container */
+.menu-tab.active::after {
+  width: 55%;
+}
+
+/* HOVER */
+.menu-tab:not(.active):hover {
+  background: rgba(122, 31, 43, 0.08);
+}
+
+
+/* ================= MENU LIST ================= */
 .menu-list {
   max-width: 480px;
-  margin: 45px auto 0;
+  margin: 20px auto 0;
   text-align: center;
 }
 
-/* Elegant Menu UL */
+/* UL */
 .menu-ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* Menu Items */
+/* LI */
 .menu-ul li {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 20px;
-  font-weight: 500;
-  color: #7a1f2b; /* maroon */
+  font-family: "Cormorant Upright", serif;
+  /* font-size: 22px; */
+  /* font-weight: 520; */
+  color: #7a1f2b;
   padding: 10px 0;
   letter-spacing: 0.6px;
   position: relative;
 }
 
-/* Decorative separator */
+/* SEPARATOR */
 .menu-ul li::after {
-  content: "•";
+  content: "--";
   display: block;
-  font-size: 18px;
+  /* font-size: 15px; */
   color: #c2a46d;
-  margin-top: 6px;
+  /* margin-top: 6px; */
 }
 
-/* Remove dot from last item */
 .menu-ul li:last-child::after {
   content: "";
 }
 
+/* Back to Top Button */
+.back-to-top {
+  bottom: 22px;
+  right: 22px;
+
+  position: relative;
+  transform: translate(75vw, 30px);
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  color: #faf7f2;
+  background-color: #7a1f2b;
+  border: none;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+/* ======================================================
+   LANGUAGE TYPOGRAPHY OVERRIDES
+   Works because .menu-category-page has lang-en / lang-bn
+   ====================================================== */
+
+/* ---------------- ENGLISH ---------------- */
+.menu-category-page.lang-en {
+  --name-font: "Great Vibes", cursive;
+  --message-font: "Great Vibes", cursive;
+  --tab-font: "Cormorant Upright", serif;
+  --item-font: "Cormorant Upright", serif;
+}
+
+.menu-category-page.lang-en .wedding-title h1 {
+  font-family: var(--name-font);
+  font-size: 45px;
+  font-weight: 530;
+}
+
+.menu-category-page.lang-en .message {
+  font-family: var(--message-font);
+  font-size: 27px;
+  font-weight: 520;
+}
+
+.menu-category-page.lang-en .menu-tab {
+  font-family: var(--tab-font);
+  font-size: 18px;
+  font-weight: 520;
+}
+
+.menu-category-page.lang-en .menu-ul li {
+  font-family: var(--item-font);
+  font-size: 22px;
+  font-weight: 500;
+}
+
+/* ---------------- BENGALI ---------------- */
+.menu-category-page.lang-bn {
+  --name-font: "Noto Serif Bengali", serif;
+  --message-font: "Noto Serif Bengali", serif;
+  --tab-font: "Hind Siliguri", sans-serif;
+  --item-font: "Noto Serif Bengali", serif;
+
+  line-height: 1.6; /* Bengali needs breathing room */
+}
+
+.menu-category-page.lang-bn .wedding-title h1 {
+  font-family: var(--name-font);
+  font-size: 35px; 
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  position: relative;
+  transform: translate(10px, 10px);
+}
+
+.menu-category-page.lang-bn .wedding-title h1.second {
+  transform: translate(3px, 2px);
+}
+
+.menu-category-page.lang-bn .wedding-title h1.third {
+  transform: translate(10px, -3px);
+}
+
+.menu-category-page.lang-bn .message {
+  font-family: var(--message-font);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.menu-category-page.lang-bn .menu-tab {
+  font-family: var(--tab-font);
+  font-size: 18px;
+}
+
+.menu-category-page.lang-bn .menu-ul li {
+  font-family: var(--item-font);
+  font-size: 23px;
+}
+
+/* ---------------- OPTIONAL: smoother font switch ---------------- */
+.menu-category-page *,
+.menu-category-page *::before,
+.menu-category-page *::after {
+  transition: font-size 0.5s ease, font-family 0.25s ease;
+}

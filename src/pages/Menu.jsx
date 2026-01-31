@@ -1,5 +1,8 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import PhotoSlider from "./PhotoSlider";
 import howrah from "../assets/howrah.jpeg";
+import closeup from "../assets/closeup.jpeg";
+import standing from "../assets/standing.jpeg";
 import "./Check.css";
 
 const Menu = () => {
@@ -43,16 +46,18 @@ const Menu = () => {
       name: ["রিয়া ও সুমন্ত", "এর", "শুভ পরিণয়"],
       message: "ভালোবাসার এক নতুন অধ্যায়, আজ থেকে পথ চলা একসাথে।",
       counter: ["স্টল", "মেইন কোর্স", "ফ্রুট স্টল"],
-      stall: ["চা/কফি", "ফিশ বল/পনির চীজ বল", "ফুচকা/পাপড়ি চাট", "চিকেন ললিপপ", "জিলিপি রাবড়ি", "রেশমি কাবাব", "রেড কাবাব", "মোমো", "স্যালাড", "মিক্সড ফ্রুট জুস পার্লার", "সোডা কাউন্টার-পার্লার", "আইসক্রিম-পার্লার", "বেবি কর্ন", "মাখা সন্দেশ", "গরম গোলাপ জামন", "পান"],
+      stall: ["চা/কফি", "ফিশ বল/পনির চীজ বল", "ফুচকা/পাপড়ি চাট", "চিকেন ললিপপ", "জিলিপি রাবড়ি", "রেশমি কাবাব", "রেড কাবাব", "মোমো", "স্যালাড", "মিক্সড ফ্রুট জুস পার্লার", "সোডা কাউন্টার-পার্লার", "আইসক্রিম-পার্লার", "বেবি কর্ন", "মাখা সন্দেশ", "গোলাপ জামন", "পান"],
       main: ["পমফ্রেট তন্দুর/পনির পাসিন্দা", "গ্রিন চাটনি", "স্যালাড", "তন্দুরি নান", "আফগান চানা মসলা", "ভেটকি পাতুরি", "সাদা ভাত", "মটন আফগান বিরিয়ানি", "মটন কষা", "চাটনি", "পাঁপড়", "কে-সি-দাসের রাজ ভোগ"],
       fruit: ["আপেল", "সিকেবি", "আঙ্গুর", "পেঁপে", "মিষ্টি লেবু"]
     }
   };
 
+  const slides = [howrah, standing, closeup];
+
   return (
     <div className={`menu-category-page ${lang === "bn" ? "lang-bn" : "lang-en"}`}>
 
-      <img className="profile-photo" src={howrah} alt="Profile" />
+      <PhotoSlider />
 
       <div className="wedding-title">
         <h1 className="first">{weddingText[lang].name[0]}</h1>
