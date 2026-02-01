@@ -254,14 +254,14 @@ body {
   /* border: 1px solid blue; */
 }
 
-.menu-tabs.lang-en {
-  margin-top: -10px;
-}
+/* .menu-tabs.lang-en {
+} */
 
 .menu-category-page.lang-en .menu-tab {
   font-family: var(--tab-font);
   font-size: 25px;
   font-weight: 750;
+  margin-top: 0px;
 }
 
 .menu-category-page.lang-en .menu-ul li {
@@ -318,7 +318,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -12px;
+  margin-top: -2px;
 }
 
 .menu-category-page.lang-bn .menu-ul li {
