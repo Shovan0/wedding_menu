@@ -6,7 +6,7 @@ import standing from "../assets/standing.jpeg";
 import "./Check.css";
 
 const Menu = () => {
-  const [activeCategory, setActiveCategory] = useState("stall");
+  const [activeCategory, setActiveCategory] = useState("main");
   const [lang, setLang] = useState("bn");
 
   /* CATEGORY SWIPE LOGIC */
@@ -15,6 +15,7 @@ const Menu = () => {
 
   const handleCategoryTouchStart = (e) => {
     swipeStartX.current = e.touches[0].clientX;
+    
   };
 
   const handleCategoryTouchEnd = (e) => {
@@ -38,17 +39,18 @@ const Menu = () => {
       name: ["Riya", "weds", "Sumanta"],
       message: "With love, laughter & happily ever after",
       counter: ["Stall", "Main Course", "Fruit Stall"],
-      stall: ["Tea, Coffee", "Phuchka, Papri Chat", "Fish Ball, Paneer Cheese Ball", "Chicken Lollipop", "Jilabi Rabri", "Reshmi Kabab", "Red Kabab", "Momo", "Salad", "Mixed Fruit Juice Perlour", "Soda Counter", "Ice Cream", "Baby Corn", "Makha Sondesh", "Hot Gulap Jamun", "Paan"],
-      main: ["Pomfret Tandoor/Paneer Pasinda", "Green Chatni", "Salad", "Tandoor Naan", "Afghan Chana Masala/Keema Dal Fry", "Vetki Paturi", "Plain Rice", "Mutton Afghani Biriyani  (Kolkata Style)", "Mutton Kosha", "Chatni", "Papad", "KC Das Raj Vog"],
-      fruit: ["Apple", "CKB", "Grapes", "Papaya", "Sweet Lemon"]
+      stall: ["Tea, Coffee", "Phuchka, Papri Chat", "Momo", "Mixed Salad", "Fish Ball, Paneer Cheese Ball", "Baby Corn", "Reshmi Kabab", "Red Kabab", "Chicken Lollipop", "Jilabi Rabri", "Sondesh", "Gulap Jamun", "Mixed Fruit Juice Perlour", "Mocktail Counter", "Ice Cream Perlour", "Paan"],
+      main: ["Pomfret Tandoor/Paneer Pasinda", "Green Chatni", "Salad", "Tandoor Naan", "Afghan Chana Masala/Keema Dal Fry", "Vetki Paturi", "Plain Rice", "Mutton Afghani Biriyani", "Mutton Kosha", "Chatni", "Papad", "KC Das Raj Vog"],
+      fruit: ["Apple", "Green Apple", "Pineapple", "Papaya", "Orange", "Black Grapes", "Red Grapes", "Guava", "Dragon Fruit", "Kiwi", "Strawberry", "Rambutan", "Watermelon", "Pomagranate", "Fig", "Dates"]
     },
     bn: {
       name: ["রিয়া ও সুমন্ত", "এর", "শুভ পরিণয়"],
       message: "ভালোবাসার এক নতুন অধ্যায়, আজ থেকে পথ চলা একসাথে।",
       counter: ["স্টল", "মেইন কোর্স", "ফ্রুট স্টল"],
-      stall: ["চা/কফি", "ফিশ বল/পনির চীজ বল", "ফুচকা/পাপড়ি চাট", "চিকেন ললিপপ", "জিলিপি রাবড়ি", "রেশমি কাবাব", "রেড কাবাব", "মোমো", "স্যালাড", "মিক্সড ফ্রুট জুস পার্লার", "সোডা কাউন্টার-পার্লার", "আইসক্রিম-পার্লার", "বেবি কর্ন", "মাখা সন্দেশ", "গোলাপ জামন", "পান"],
+      stall: ["চা, কফি", "ফুচকা, পাপড়ি চাট", "মোমো", "ফিশ বল, পনির চীজ বল", "বেবি কর্ন", "রেশমি কাবাব", "রেড কাবাব", "চিকেন ললিপপ", "জিলিপি রাবড়ি", "মাখা সন্দেশ", "গোলাপ জামন", "মিক্সড ফ্রুট জুস পার্লার", "মকটেল কাউন্টার", "আইসক্রিম পার্লার", "পান"],
       main: ["পমফ্রেট তন্দুর/পনির পাসিন্দা", "গ্রিন চাটনি", "স্যালাড", "তন্দুরি নান", "আফগান চানা মসলা", "ভেটকি পাতুরি", "সাদা ভাত", "মটন আফগান বিরিয়ানি", "মটন কষা", "চাটনি", "পাঁপড়", "কে-সি-দাসের রাজ ভোগ"],
-      fruit: ["আপেল", "সিকেবি", "আঙ্গুর", "পেঁপে", "মৌসুমি লেবু"]
+      fruit: ["আপেল", "সবুজ আপেল", "আনারস", "পেঁপে", "কমলালেবু", "কালো আঙ্গুর", "লাল আঙ্গুর", "পিয়ারা", "ড্রাগন ফল", "কিউই ফল", "স্ট্রবেরি", "রাম ভুটান", "তরমুজ", "ডালিম", "আনজির", "খেঁজুর"]
+
     }
   };
 
@@ -83,7 +85,7 @@ const Menu = () => {
         onTouchStart={handleCategoryTouchStart}
         onTouchEnd={handleCategoryTouchEnd}
       >
-        <div className="menu-tabs sticky-tabs">
+        <div className={`menu-tabs ${lang === "bn" ? "lang-bn" : "lang-en"}`}>
           {categories.map((cat, index) => (
             <button
               key={cat}
