@@ -66,9 +66,10 @@ body {
 /* ================= WAVE DIVIDER ================= */
 .ornamental-divider {
   width: 100%;
-  margin: 12px 0 16px;
+  margin: 12px 0px 16px;
   display: flex;
   justify-content: center;
+  transform: translateY(-20px);
 }
 
 .ornamental-divider svg {
