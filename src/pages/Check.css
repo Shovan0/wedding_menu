@@ -96,7 +96,6 @@ body {
 
 
 /* ================= MENU TABS ================= */
-/* ================= MENU TABS WRAPPER ================= */
 .menu-tabs {
   display: flex;
   width: 100%;
@@ -144,6 +143,7 @@ body {
 /* ================= ACTIVE TAB ================= */
 .menu-tab.active {
   font-weight: 650; /* slight emphasis */
+  text-shadow: 0 1.5px 2px rgb(122, 31, 43, 0.75);
 }
 
 .menu-tab.active::after {
