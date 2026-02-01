@@ -39,14 +39,14 @@ const Menu = () => {
       name: ["Riya", "weds", "Sumanta"],
       message: "With love, laughter & happily ever after",
       counter: ["Main Course", "Stall"],
-      main: ["Pomfret Tandoor/Paneer Pasinda", "Green Chatni", "Salad", "Tandoor Naan", "Afghan Chana Masala/Keema Dal Fry", "Vetki Paturi", "Plain Rice", "Mutton Afghani Biriyani", "Mutton Kosha/Chicken Kosha", "Chatni", "Papad", "KC Das Raj Vog"],
+      main: ["Pomfret Tandoor/Paneer Pasinda", "Green Chatni", "Salad", "Tandoor Naan", "Afghan Chana Masala/Keema Dal Fry", "Vetki Paturi", "Plain Rice", "Mutton Afghani Biriyani", "Mutton Kosha/Chicken Kosha", "Chatni", "Papad", "Roshmadhuri", "Makha Sondesh (Stall)", "Gulab Jamun (Stall)"],
       stall: ["Tea, Coffee", "Phuchka, Papri Chat", "Momo", "Mixed Fruit", "Fish Ball, Paneer Cheese Ball", "Baby Corn", "Reshmi Kabab", "Red Kabab", "Chicken Lollipop", "Jilabi Rabri", "Sondesh", "Gulap Jamun", "Mixed Fruit Juice Perlour", "Mocktail Counter", "Ice Cream Perlour", "Paan"],      // fruit: ["Apple", "Green Apple", "Pineapple", "Papaya", "Orange", "Black Grapes", "Red Grapes", "Guava", "Dragon Fruit", "Kiwi", "Strawberry", "Rambutan", "Watermelon", "Pomagranate", "Fig", "Dates"]
     },
     bn: {
       name: ["রিয়া ও সুমন্ত", "এর", "শুভ পরিণয়"],
       message: "ভালোবাসার এক নতুন অধ্যায়, আজ থেকে পথ চলা একসাথে।",
       counter: ["মেইন কোর্স", "স্টল"],
-      main: ["পমফ্রেট তন্দুর/পনির পাসিন্দা", "গ্রিন চাটনি", "স্যালাড", "তন্দুরি নান", "আফগান চানা মসলা/কিমা ডাল ফ্রাই", "ভেটকি পাতুরি", "সাদা ভাত", "মটন আফগান বিরিয়ানি", "মটন কষা/চিকেন কষা", "চাটনি", "পাঁপড়", "কে-সি-দাসের রাজ ভোগ"],
+      main: ["পমফ্রেট তন্দুর/পনির পাসিন্দা", "গ্রিন চাটনি", "স্যালাড", "তন্দুরি নান", "আফগান চানা মসলা/কিমা ডাল ফ্রাই", "ভেটকি পাতুরি", "সাদা ভাত", "মটন আফগান বিরিয়ানি", "মটন কষা/চিকেন কষা", "চাটনি", "পাঁপড়", "রশমাধুরী", "মাখা সন্দেশ (স্টল)", "গোলাপ জামুন (স্টল)"],
       stall: ["চা, কফি", "ফুচকা, পাপড়ি চাট", "মোমো", "মিক্সড ফল", "ফিশ বল, পনির চীজ বল", "বেবি কর্ন", "রেশমি কাবাব", "রেড কাবাব", "চিকেন ললিপপ", "জিলিপি রাবড়ি", "মাখা সন্দেশ", "গোলাপ জামন", "মিক্সড ফ্রুট জুস পার্লার", "মকটেল কাউন্টার", "আইসক্রিম পার্লার", "পান"],
       // fruit: ["আপেল", "সবুজ আপেল", "আনারস", "পেঁপে", "কমলালেবু", "কালো আঙ্গুর", "লাল আঙ্গুর", "পিয়ারা", "ড্রাগন ফল", "কিউই ফল", "স্ট্রবেরি", "রাম ভুটান", "তরমুজ", "ডালিম", "আনজির", "খেঁজুর"]
 
@@ -67,6 +67,37 @@ const Menu = () => {
       </div>
 
       <h4 className="message">{weddingText[lang].message}</h4>
+
+      <div className="ornamental-divider">
+        <svg viewBox="0 0 400 40" preserveAspectRatio="xMidYMid meet">
+          {/* <!-- Left wave (more curvy) --> */}
+          <path
+            d="M20 20 C 90 0, 110 40, 180 20"
+            fill="none"
+            stroke="#7a1f2b"
+            strokeWidth="1.6"
+          />
+
+          {/* <!-- Right wave (more curvy) --> */}
+          <path
+            d="M220 20 C 290 0, 310 40, 380 20"
+            fill="none"
+            stroke="#7a1f2b"
+            strokeWidth="1.6"
+          />
+
+          {/* <!-- Center circle --> */}
+          <circle
+            cx="200"
+            cy="20"
+            r="4"
+            fill="#7a1f2b"
+          />
+        </svg>
+      </div>
+
+
+
 
       {/* LANGUAGE BUTTONS (NO SWIPE) */}
       <div className="lang-toggle">

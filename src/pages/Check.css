@@ -63,6 +63,23 @@ body {
   font-family: "Great Vibes", cursive;
 }
 
+/* ================= WAVE DIVIDER ================= */
+.ornamental-divider {
+  width: 100%;
+  margin: 12px 0 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.ornamental-divider svg {
+  width: 70%;
+  max-width: 420px;
+  height: 40px;
+  display: block;
+}
+
+
+
 /* ================= LANGUAGE TOGGLE ================= */
 .lang-toggle {
   position: absolute;
