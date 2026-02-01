@@ -262,12 +262,12 @@ body {
   font-size: 28px;
   font-weight: 550;
   letter-spacing: 1.2px;
-  margin-top: 15px;
+  margin-top: 25px;
   /* border: 1px solid blue; */
 }
 
 .menu-tabs.lang-en {
-  margin-top: -35px;
+  margin-top: -30px;
 }
 
 .menu-category-page.lang-en .menu-tab {

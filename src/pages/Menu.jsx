@@ -6,7 +6,7 @@ import standing from "../assets/standing.jpeg";
 import "./Check.css";
 
 const Menu = () => {
-  const [activeCategory, setActiveCategory] = useState("stall");
+  const [activeCategory, setActiveCategory] = useState("main");
   const [lang, setLang] = useState("bn");
 
   /* CATEGORY SWIPE LOGIC */
