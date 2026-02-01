@@ -10,7 +10,7 @@ const Menu = () => {
   const [lang, setLang] = useState("bn");
 
   /* CATEGORY SWIPE LOGIC */
-  const categories = ["stall", "main", "fruit"];
+  const categories = ["main", "stall"];
   const swipeStartX = useRef(0);
 
   const handleCategoryTouchStart = (e) => {
@@ -38,18 +38,17 @@ const Menu = () => {
     en: {
       name: ["Riya", "weds", "Sumanta"],
       message: "With love, laughter & happily ever after",
-      counter: ["Stall", "Main Course", "Fruit Stall"],
-      stall: ["Tea, Coffee", "Phuchka, Papri Chat", "Momo", "Mixed Salad", "Fish Ball, Paneer Cheese Ball", "Baby Corn", "Reshmi Kabab", "Red Kabab", "Chicken Lollipop", "Jilabi Rabri", "Sondesh", "Gulap Jamun", "Mixed Fruit Juice Perlour", "Mocktail Counter", "Ice Cream Perlour", "Paan"],
+      counter: ["Main Course", "Stall"],
       main: ["Pomfret Tandoor/Paneer Pasinda", "Green Chatni", "Salad", "Tandoor Naan", "Afghan Chana Masala/Keema Dal Fry", "Vetki Paturi", "Plain Rice", "Mutton Afghani Biriyani", "Mutton Kosha", "Chatni", "Papad", "KC Das Raj Vog"],
-      fruit: ["Apple", "Green Apple", "Pineapple", "Papaya", "Orange", "Black Grapes", "Red Grapes", "Guava", "Dragon Fruit", "Kiwi", "Strawberry", "Rambutan", "Watermelon", "Pomagranate", "Fig", "Dates"]
+      stall: ["Tea, Coffee", "Phuchka, Papri Chat", "Momo", "Mixed Fruit", "Fish Ball, Paneer Cheese Ball", "Baby Corn", "Reshmi Kabab", "Red Kabab", "Chicken Lollipop", "Jilabi Rabri", "Sondesh", "Gulap Jamun", "Mixed Fruit Juice Perlour", "Mocktail Counter", "Ice Cream Perlour", "Paan"],      // fruit: ["Apple", "Green Apple", "Pineapple", "Papaya", "Orange", "Black Grapes", "Red Grapes", "Guava", "Dragon Fruit", "Kiwi", "Strawberry", "Rambutan", "Watermelon", "Pomagranate", "Fig", "Dates"]
     },
     bn: {
       name: ["রিয়া ও সুমন্ত", "এর", "শুভ পরিণয়"],
       message: "ভালোবাসার এক নতুন অধ্যায়, আজ থেকে পথ চলা একসাথে।",
-      counter: ["স্টল", "মেইন কোর্স", "ফ্রুট স্টল"],
-      stall: ["চা, কফি", "ফুচকা, পাপড়ি চাট", "মোমো", "ফিশ বল, পনির চীজ বল", "বেবি কর্ন", "রেশমি কাবাব", "রেড কাবাব", "চিকেন ললিপপ", "জিলিপি রাবড়ি", "মাখা সন্দেশ", "গোলাপ জামন", "মিক্সড ফ্রুট জুস পার্লার", "মকটেল কাউন্টার", "আইসক্রিম পার্লার", "পান"],
+      counter: ["মেইন কোর্স", "স্টল"],
       main: ["পমফ্রেট তন্দুর/পনির পাসিন্দা", "গ্রিন চাটনি", "স্যালাড", "তন্দুরি নান", "আফগান চানা মসলা", "ভেটকি পাতুরি", "সাদা ভাত", "মটন আফগান বিরিয়ানি", "মটন কষা", "চাটনি", "পাঁপড়", "কে-সি-দাসের রাজ ভোগ"],
-      fruit: ["আপেল", "সবুজ আপেল", "আনারস", "পেঁপে", "কমলালেবু", "কালো আঙ্গুর", "লাল আঙ্গুর", "পিয়ারা", "ড্রাগন ফল", "কিউই ফল", "স্ট্রবেরি", "রাম ভুটান", "তরমুজ", "ডালিম", "আনজির", "খেঁজুর"]
+      stall: ["চা, কফি", "ফুচকা, পাপড়ি চাট", "মোমো", "মিক্সড ফল", "ফিশ বল, পনির চীজ বল", "বেবি কর্ন", "রেশমি কাবাব", "রেড কাবাব", "চিকেন ললিপপ", "জিলিপি রাবড়ি", "মাখা সন্দেশ", "গোলাপ জামন", "মিক্সড ফ্রুট জুস পার্লার", "মকটেল কাউন্টার", "আইসক্রিম পার্লার", "পান"],
+      // fruit: ["আপেল", "সবুজ আপেল", "আনারস", "পেঁপে", "কমলালেবু", "কালো আঙ্গুর", "লাল আঙ্গুর", "পিয়ারা", "ড্রাগন ফল", "কিউই ফল", "স্ট্রবেরি", "রাম ভুটান", "তরমুজ", "ডালিম", "আনজির", "খেঁজুর"]
 
     }
   };
