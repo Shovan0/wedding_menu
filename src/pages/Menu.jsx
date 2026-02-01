@@ -6,7 +6,7 @@ import standing from "../assets/standing.jpeg";
 import "./Check.css";
 
 const Menu = () => {
-  const [activeCategory, setActiveCategory] = useState("main");
+  const [activeCategory, setActiveCategory] = useState("stall");
   const [lang, setLang] = useState("bn");
 
   /* CATEGORY SWIPE LOGIC */
@@ -15,7 +15,7 @@ const Menu = () => {
 
   const handleCategoryTouchStart = (e) => {
     swipeStartX.current = e.touches[0].clientX;
-    
+
   };
 
   const handleCategoryTouchEnd = (e) => {
