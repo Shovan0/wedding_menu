@@ -38,7 +38,7 @@ const Menu = () => {
       name: ["Riya", "weds", "Sumanta"],
       message: "With love, laughter & happily ever after",
       counter: ["Stall", "Main Course", "Fruit Stall"],
-      stall: ["Tea/Coffee", "Fish Ball/Paneer Cheese Ball", "Phuchka/Papri Chat", "Chicken Lollipop", "Jilabi Rabri", "Reshmi Kabab", "Red Kabab", "Momo", "Salad", "Mixed Fruit Juice Perlour", "Soda Counter", "Ice Cream", "Baby Corn", "Makha Sondesh", "Hot Gulap Jamun", "Paan"],
+      stall: ["Tea, Coffee", "Phuchka, Papri Chat", "Fish Ball, Paneer Cheese Ball", "Chicken Lollipop", "Jilabi Rabri", "Reshmi Kabab", "Red Kabab", "Momo", "Salad", "Mixed Fruit Juice Perlour", "Soda Counter", "Ice Cream", "Baby Corn", "Makha Sondesh", "Hot Gulap Jamun", "Paan"],
       main: ["Pomfret Tandoor/Paneer Pasinda", "Green Chatni", "Salad", "Tandoor Naan", "Afghan Chana Masala/Keema Dal Fry", "Vetki Paturi", "Plain Rice", "Mutton Afghani Biriyani  (Kolkata Style)", "Mutton Kosha", "Chatni", "Papad", "KC Das Raj Vog"],
       fruit: ["Apple", "CKB", "Grapes", "Papaya", "Sweet Lemon"]
     },
